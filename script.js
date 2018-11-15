@@ -47,12 +47,14 @@ osc.start();
 
 // Turn on amplifier on button press
 function play() {
+    audioContext.resume(); //In case iOS suspended it
     amplifier.gain.value = volume;
     console.log("started");
 }
 
 // Disconnect oscillator when button is not pressed
 function stop() {
+    audioContext.resume(); //In case iOS suspended it
     amplifier.gain.value = 0;
 }
 
